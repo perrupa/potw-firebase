@@ -27,8 +27,7 @@ class UserLogin extends Component {
             } else {
                 browserHistory.push('/profile');
             }
-        }
-    );
+        });
     }
 
     loginWithProvider(provider) {
