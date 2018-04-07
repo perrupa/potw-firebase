@@ -72,10 +72,11 @@ class App extends Component {
                             </ul>
                         </nav>
                     </div>
-                </header>
+                    <link href="https://fonts.googleapis.com/css?family=Lora:700" rel="stylesheet" />
+                  </header>
 
-                <div className="container">
-                    {this.props.children}
+                  <div className="container">
+                      {this.props.children}
                 </div>
             </div>
         );
