@@ -19,20 +19,19 @@ class Index extends Component {
   }
 
   getSongs(songs) {
-    return songs.map( (song, index) => {
-      return <Song key={index} song={song} />
-    })
+    return songs.map((song, index) =>
+      <li>
+        <Song key={index} song={song} />
+      </li>
+    )
   }
-};
-
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({
-      // actionCreatorsGoHere
-    }, dispatch);
 }
 
-function mapStateToProps(state) {
-    return { songs: state.songs };
-}
+const playSong = songID => ({ type: "PLAY_SONG", songID })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Index);
+export default connect(
+  state => ({ songs: state.songs }),
+  dispatch => bindActionCreators({
+    playSong: playSong
+  }, dispatch)
+)(Index)

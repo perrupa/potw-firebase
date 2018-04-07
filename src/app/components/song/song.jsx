@@ -15,7 +15,7 @@ class Song extends Component {
       const { song } = this.props
       return (
         <div>
-          {[ song.artist, song.title ].join(' - ')} 
+          {[ song.artist, song.title ].join(' - ')}
         </div>
       );
     }

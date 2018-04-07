@@ -1,10 +1,10 @@
-import { combineReducers } from 'redux';
-import FireBaseUserReducer from './firebase_user_reducer';
-import songs from './songs';
+import { combineReducers } from 'redux'
+import FireBaseUserReducer from './firebase_user_reducer'
+import songs from './songs'
 
 const rootReducer = combineReducers({
-    currentUser: FireBaseUserReducer,
-    songs
-});
+  currentUser: FireBaseUserReducer,
+  songs,
+})
 
-export default rootReducer;
+export default rootReducer

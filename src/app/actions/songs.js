@@ -1,11 +1,11 @@
 import {
   LOAD_PLAYLIST,
-} from './types';
+} from './types'
 
-export function loadPlaylist(songs) {
-  const request = FireBaseTools.logoutUser(user);
+export default function loadPlaylist(songs) {
+  // FireBaseTools.logoutUser(user);
   return {
     type: LOAD_PLAYLIST,
     payload: songs,
-  };
+  }
 }
