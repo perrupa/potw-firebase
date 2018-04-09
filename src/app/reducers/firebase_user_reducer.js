@@ -7,7 +7,7 @@ import {
   CHANGE_FIREBASE_USER_PASSWORD,
   FIREBASE_PASSWORD_RESET_EMAIL,
   LOGOUT_FIREBASE_USER
-} from "../actions/types";
+} from "actions/types";
 
 export default function(state = null, action) {
   switch (action.type) {

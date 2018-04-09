@@ -1,5 +1,5 @@
 // Songs reducer
-import { LOAD_PLAYLIST } from "../actions/songs";
+import { LOAD_PLAYLIST } from "actions/songs";
 
 const defaultPlaylist = [
   { artist: "Duke Hugh", title: "Your Number", youtubeID: "ydmCCSWiEu4" },

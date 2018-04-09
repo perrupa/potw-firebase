@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import firebase from '../../utils/firebase';
+import firebase from 'utils/firebase';
 
 
-import { fetchUser, updateUser } from '../../actions/firebase_actions';
-import Loading from '../helpers/loading';
-import ChangePassword from './change_password';
+import { fetchUser, updateUser } from 'actions/firebase_actions';
+import Loading from 'helpers/loading';
+import ChangePassword from 'components/user/change_password';
 
 class UserProfile extends Component {
 

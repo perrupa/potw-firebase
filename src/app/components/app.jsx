@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchUser, logoutUser} from '../actions/firebase_actions';
-import UserMenu from '../components/UserMenu';
+
+import {fetchUser, logoutUser} from 'actions/firebase_actions';
+import UserMenu from 'components/UserMenu';
 
 class App extends Component {
   constructor(props) {
