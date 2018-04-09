@@ -1,17 +1,27 @@
 {
-  "extends": "airbnb",
+  "extends": [
+    "standard",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react",
+    "prettier/standard"
+  ],
+  "plugins": [
+    "react",
+    "prettier",
+    "standard"
+  ],
   "parserOptions": {
+    "sourceType": "module",
     "ecmaFeatures": {
-      "experimentalObjectRestSpread": true
+      "jsx": true
     }
   },
-  "rules": {
-    "semi": ["error", "never"],
-    "max-len": ["warn", 120],
-    "indent": ["warn", 2],
-    "react/jsx-indent": ["warn", 2]
+  "env": {
+    "es6": true,
+    "node": true
   },
-  "globals": {
-    "localStorage": true
+  "rules": {
+    "prettier/prettier": "error"
   }
 }
