@@ -5,7 +5,7 @@ import firebase from 'utils/firebase';
 
 
 import { fetchUser, updateUser } from 'actions/firebase_actions';
-import Loading from 'helpers/loading';
+import Loading from 'components/helpers/loading';
 import ChangePassword from 'components/user/change_password';
 
 class UserProfile extends Component {
