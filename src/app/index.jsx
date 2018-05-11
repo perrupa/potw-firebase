@@ -18,9 +18,6 @@ const store = createStore(reducers, composeWithDevTools(
   applyMiddleware(ReduxPromise),
 ))
 
-// const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
-
-
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory} routes={routes} />
