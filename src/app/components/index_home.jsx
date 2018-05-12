@@ -3,35 +3,40 @@ import { browserHistory, Link } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Song from './song/song.jsx';
+import { playSong, loadPlaylist } from 'actions/songs';
 
 class Index extends Component {
 
+  componentDidMount() {
+    this.props.loadPlaylist([
+      { id:1, artist: "Duke Hugh", title: "Your Number", youtubeID: "ydmCCSWiEu4" },
+      { id:2, artist: "Todd Terje", title: "Delorean Dynamite", youtubeID: "LUOIvT9hzD8" }
+    ])
+  }
   render() {
     const {songs} = this.props || [];
     return (
       <div>
         <h1>POTW</h1>
-        <ul>
-          {this.getSongs(songs)}
-        </ul>
+        {songs.map(song =>
+          <Song
+            key={song.id}
+            song={song}
+            onClick={this.playSong(song.id)}
+          />
+        )}
       </div>
     );
   }
 
-  getSongs(songs) {
-    return songs.map((song, index) =>
-      <li>
-        <Song key={index} song={song} />
-      </li>
-    )
+  playSong(id) {
+    return () => {
+      this.props.playSong(id)
+    }
   }
 }
 
-const playSong = songID => ({ type: "PLAY_SONG", songID })
-
 export default connect(
   state => ({ songs: state.songs }),
-  dispatch => bindActionCreators({
-    playSong: playSong
-  }, dispatch)
+  dispatch => bindActionCreators({ playSong, loadPlaylist }, dispatch)
 )(Index)

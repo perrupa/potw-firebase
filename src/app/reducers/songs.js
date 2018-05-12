@@ -1,9 +1,8 @@
 // Songs reducer
-import { LOAD_PLAYLIST } from "actions/songs";
+import { LOAD_PLAYLIST } from "actions/types";
 
 const defaultPlaylist = [
-  { artist: "Duke Hugh", title: "Your Number", youtubeID: "ydmCCSWiEu4" },
-  { artist: "Todd Terje", title: "Delorean Dynamite", youtubeID: "LUOIvT9hzD8" }
+  { id:0, artist: "No playlist specified", title: "-", youtubeID: null },
 ];
 
 export default function(state = defaultPlaylist, action) {

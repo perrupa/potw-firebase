@@ -10,10 +10,12 @@ class Song extends Component {
     }
 
     render(props) {
-      const { song } = this.props
+      const { song, onClick } = this.props
       return (
         <div>
-          {[ song.artist, song.title ].join(' - ')}
+          <button onClick={onClick}>
+            {[ song.artist, song.title ].join(' - ')}
+          </button>
         </div>
       );
     }
