@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Router, browserHistory } from 'react-router';
 import ReduxPromise from 'redux-promise';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import reducers from './reducers';
 import routes from './routes';
@@ -19,8 +20,10 @@ const store = createStore(reducers, composeWithDevTools(
 ))
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router history={browserHistory} routes={routes} />
-  </Provider>,
+  <MuiThemeProvider>
+    <Provider store={store}>
+      <Router history={browserHistory} routes={routes} />
+    </Provider>
+  </MuiThemeProvider>,
   document.querySelector('.react-root')
 );

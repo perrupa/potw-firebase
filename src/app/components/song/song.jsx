@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import Button from 'material-ui/FlatButton';
 
 class Song extends Component {
 
@@ -13,9 +14,9 @@ class Song extends Component {
       const { song, onClick } = this.props
       return (
         <div>
-          <button onClick={onClick}>
-            {[ song.artist, song.title ].join(' - ')}
-          </button>
+          <Button onClick={onClick}
+            label={ [song.artist, song.title].join(' - ') }
+          />
         </div>
       );
     }
